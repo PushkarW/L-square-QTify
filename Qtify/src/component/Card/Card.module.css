@@ -1,6 +1,5 @@
 .wrapper {
-  width: 200px;
-  padding-left: 20px;
+  width: 160px;
 }
 
 .card {
@@ -10,10 +9,7 @@
   border-radius: 10px;
   overflow: hidden;
 }
-.image {
-  width: 160px;
-  height: 205px;
-}
+
 .banner {
   position: absolute;
   bottom: 0;
@@ -28,8 +24,6 @@
   .chip {
     background-color: var(--color-black);
     color: white;
-    padding: 10px;
-    border-radius: 10px;
   }
 }
 
