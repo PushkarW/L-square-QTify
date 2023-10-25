@@ -2,12 +2,13 @@ import { useEffect, useState } from "react";
 import "./App.css";
 import Hero from "./component/Hero/Hero";
 import Navbar from "./component/Navbar/Navbar";
-import { fetchTopAlbums } from "./api/api";
+import { fetchTopAlbums, fetchNewAlbums } from "./api/api";
 // import Card from "./component/Card/Card";
 import Section from "./component/Section/Section";
 
 function App() {
   const [topAlbumsData, setTopAlbumsData] = useState([]);
+  const [newAlbumsData, setNewAlbumsData] = useState([]);
 
   const generateTopAlbumsData = async () => {
     try {
@@ -18,9 +19,22 @@ function App() {
       console.error(err);
     }
   };
+  const generateNewAlbumsData = async () => {
+    try {
+      const data = await fetchNewAlbums();
+      console.log(data);
+      setNewAlbumsData(data);
+    } catch (err) {
+      console.error(err);
+    }
+  };
 
   useEffect(() => {
     generateTopAlbumsData();
+  }, []);
+
+  useEffect(() => {
+    generateNewAlbumsData();
   }, []);
 
   return (
@@ -29,6 +43,7 @@ function App() {
       <Hero />
       <div>
         <Section data={topAlbumsData} type="album" title="Top Albums" />
+        <Section data={newAlbumsData} type="album" title="New Albums" />
       </div>
     </div>
   );

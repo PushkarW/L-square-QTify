@@ -23,5 +23,16 @@ body {
   background-color: var(--color-black);
   font-family: "Poppins", sans-serif;
   color: var(--color-white);
-  overflow: auto;
+  /* overflow: auto; */
+  overflow-y: auto;
+}
+
+img,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+.swiper-slide {
+  width: auto !important;
 }
