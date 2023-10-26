@@ -18,7 +18,9 @@ const Section = ({ title, data, type }) => {
           {!carouselToggle ? "Collapse All" : "Show All"}
         </h4>
       </div>
+
       {data.length === 0 ? (
+        // <Box className={styles.loading}>
         <CircularProgress />
       ) : (
         <div className={styles.cardWrapper}>

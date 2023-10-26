@@ -5,13 +5,14 @@ import { Navigation } from "swiper/modules";
 import CarouselLeftNavigation from "./CarouselLeftNavigation";
 import CarouselRightNavigation from "./CarouselRightNavigation";
 import "swiper/css";
-import { all } from "axios";
+// import { all } from "axios";
 
 const Controls = ({ data }) => {
   const swiper = useSwiper();
 
   useEffect(() => {
     swiper.slideTo(0, 100);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [data]);
 
   return <></>;
